@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercise1</string>
+    <string name="titulo">Curiosity Forms</string>
+    <string name="instrucciones">Please enter the following data:</string>
+    <string name="nombre">Name</string>
+    <string name="apellidos">Last Name</string>
+    <string name="fechaNaci">Birthdate</string>
+    <string name="correoElec">Email Address</string>
+    <string name="numCuenta">Account Number</string>
+    <string name="boton">Accept</string>
+    <string name="version">Version 1.0</string>
+    <string name="nombreCreador">Edgar Amaro Cantoral</string>
+    <string name="escogerCarrera">Career</string>
+    <string name="escogerCarrera2">Career</string>
+
+    <string-array name="Carreras">
+        <item>Aerospace Engineering</item>
+        <item>Environmental Engineering</item>
+        <item>Civil Engineering</item>
+        <item>Computer Engineering</item>
+        <item>Electronic Electrical Engineering</item>
+        <item>Geophysical Engineering</item>
+        <item>Geological Engineering</item>
+        <item>Geomatics Engineering</item>
+        <item>Mechanical Engineering</item>
+        <item>Mechantronic Engineering</item>
+        <item>Mining and Metallurgical Engineering</item>
+        <item>Petroleum Engineering</item>
+        <item>Engineering in Biomedical Systems</item>
+        <item>Telecommunications Engineering</item>
+    </string-array>
+    <string name="nombre_error">Please, enter a valid name</string>
+    <string name="fecha_error">Please, enter a valid birthdate</string>
+    <string name="cuenta_error">Please, enter a valid number account</string>
+    <string name="correo_error">Please, enter a valid email</string>
+    <string name="edad">Age</string>
+    <string name="zodiac">Your zodiacs are:</string>
+</resources>

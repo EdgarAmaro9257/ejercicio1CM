@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Ejercicio1</string>
+    <string name="titulo">Curiosidad Forms</string>
+    <string name="instrucciones">Por favor ingrese los siguientes datos:</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="fechaNaci">Fecha de Nacimiento</string>
+    <string name="correoElec">Correo Electrónico</string>
+    <string name="numCuenta">Número de cuenta</string>
+    <string name="boton">Aceptar</string>
+    <string name="version">Version 1.0</string>
+    <string name="nombreCreador">Edgar Amaro Cantoral</string>
+    <string name="escogerCarrera">Carrera:</string>
+    <string name="escogerCarrera2">Carrera</string>
+    <string name="nombre_error">Por favor, ingresa un nombre</string>
+    <string name="fecha_error">Por favor, ingresa una fecha correcta</string>
+    <string name="cuenta_error">Por favor, ingresa un número de cuenta correcto</string>
+    <string name="correo_error">Por favor, ingresa una email correcto</string>
+    <string name="edad">Edad</string>
+    <string name="zodiac">Tus zodiacos son:</string>
+
+    <string-array name="Carreras">
+        <item>Ingeniería Aeroespacial</item>
+        <item>Ingeniería Ambiental</item>
+        <item>Ingeniería Civil</item>
+        <item>Ingeniería en Computación</item>
+        <item>Ingeniería Eléctrica Electrónica</item>
+        <item>Ingeniería Geofísica</item>
+        <item>Ingeniería Geológica</item>
+        <item>Ingeniería Geomática</item>
+        <item>Ingeniería Mecánica</item>
+        <item>Ingeniería Mecantrónica</item>
+        <item>Ingeniería de Minas y Metalurgia</item>
+        <item>Ingeniería Petrolera</item>
+        <item>Ingeniería en Sitemas Biomédicos</item>
+        <item>Ingeniería en Telecomunicaciones</item>
+    </string-array>
+
+</resources>
