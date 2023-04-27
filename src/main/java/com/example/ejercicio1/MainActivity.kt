@@ -1,5 +1,6 @@
 package com.example.ejercicio1
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,23 +48,26 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        //Haciendo Date Picker para fecha de nacimiento
-        val fechaNaci = findViewById<EditText>(R.id.fechaNaci)
-        fechaNaci.setOnClickListener { showDatePickerDialog() }
-
-        val boton = findViewById<Button>(R.id.button)
 
     }
 
-    private fun showDatePickerDialog() {
-        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
-        datePicker.show(supportFragmentManager, "datePicker")
+    private fun datePicker(){
+        // Valores por defecto del DatePicker
+        val year = 2000
+        val month = 0
+        val day = 1
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { view, year1, monthOfYear, dayOfMonth ->
+                val dateChoice = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year1)
+                binding.fechaNaci.setText(dateChoice)
+                //temp = dateChoice
+            }, year, month, day
+        )
+        datePickerDialog.show()
     }
 
-    private fun onDateSelected(day: Int, month: Int, year: Int) {
-        val fechaNaci = findViewById<EditText>(R.id.fechaNaci)
-        fechaNaci.setText("$day/$month/$year")
-    }
 
     //Acción del botón ACEPTAR y traslado hacia MainActivity2
     fun onClick(view: View) {
@@ -76,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     val parameters = Bundle()
 
                     parameters.putString("name", binding.nombredelaPersona.text.toString())
-                    parameters.putString("name", binding.apellidos.text.toString())
+                    parameters.putString("name2", binding.apellidos.text.toString())
                     parameters.putString("date", binding.fechaNaci.text.toString())
                     parameters.putString("email", binding.correoElectronico.text.toString())
                     parameters.putString("account", binding.numerodeCuenta.text.toString())
@@ -92,15 +96,37 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-            /*
             R.id.fechaNaci -> {
-                showDatePickerDialog()
+                datePicker()
             }
-            */
-
         }
     }
 
+    private fun isNotEmpty(): Boolean {
+        val check = mutableListOf<Boolean>() // Para comprobar que haya texto
+        with(binding) {
+            val idsTexts = listOf(
+                nombredelaPersona.text,
+                apellidos.text,
+                fechaNaci.text,
+                correoElectronico.text,
+                numerodeCuenta.text
+            )
+
+            for (id_text in idsTexts) {
+                if (id_text.isEmpty()) {
+                    idError(idsTexts.indexOf(id_text))
+                    check.add(false) // Agregar un valor falso si el campo de texto está vacío
+                } else {
+                    check.add(true)
+                }
+            }
+            return check.all { it } // Devolver verdadero si todos los elementos en check son verdaderos
+        }
+    }
+
+
+    /*
     private fun isNotEmpty(): Boolean {
         val check = mutableListOf<Boolean>() // Para comprobar que haya texto
         with(binding) {
@@ -122,7 +148,7 @@ class MainActivity : AppCompatActivity() {
             return check.size == 4
         }
     }
-
+*/
     private fun idError(id: Int) {
         when (id) {
             0 -> {

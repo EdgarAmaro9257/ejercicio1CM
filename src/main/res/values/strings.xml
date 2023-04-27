@@ -17,6 +17,7 @@
     <string name="cuenta_error">Por favor, ingresa un número de cuenta correcto</string>
     <string name="correo_error">Por favor, ingresa una email correcto</string>
     <string name="edad">Edad</string>
+    <string name="edad2">Edad:</string>
     <string name="zodiac">Tus zodiacos son:</string>
 
     <string-array name="Carreras">

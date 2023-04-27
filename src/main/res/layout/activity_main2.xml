@@ -48,10 +48,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <TextView
         android:id="@+id/apellidos"
@@ -74,15 +74,15 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <TextView
         android:id="@+id/edad"
-        android:layout_width="176dp"
-        android:layout_height="71dp"
+        android:layout_width="112dp"
+        android:layout_height="58dp"
         android:backgroundTint="@color/white"
         android:clickable="false"
         android:focusable="false"
@@ -101,10 +101,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.668"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <TextView
         android:id="@+id/correoElectronico"
@@ -224,6 +224,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.516"
         tools:srcCompat="@drawable/conejo" />
+
+    <TextView
+        android:id="@+id/tuEdad"
+        android:layout_width="123dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:hint="@string/edad2"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.335" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

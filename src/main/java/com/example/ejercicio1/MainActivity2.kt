@@ -94,9 +94,14 @@ class MainActivity2 : AppCompatActivity() {
 
     fun splitDate(date: String): Array<String> {
         val tmp = date.split("-").toTypedArray()
-        return arrayOf(tmp[0],tmp[1], tmp[2])
-        //          DAY     MONTH   YEAR
+        return if (tmp.size >= 3) {
+            arrayOf(tmp[0], tmp[1], tmp[2])
+        } else {
+            arrayOf("", "", "")
+        }
+        // DAY MONTH YEAR
     }
+
 
     fun ageCalculator(date: String){
         val tmp = splitDate(date)
