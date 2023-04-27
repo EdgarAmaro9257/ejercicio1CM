@@ -23,6 +23,17 @@ class MainActivity : AppCompatActivity() {
         val carreras = resources.getStringArray(R.array.Carreras)
         //Accediendo a spinner
         val spinner = findViewById<Spinner>(R.id.spinner)
+
+        /*
+        val carreraImagenes = listOf(
+            R.drawable.carrera_1_imagen,
+            R.drawable.carrera_2_imagen,
+            R.drawable.carrera_3_imagen,
+            // Agrega más imágenes para cada carrera
+        )
+
+         */
+
         if (spinner != null) {
             val adapter = ArrayAdapter(
                 this,
@@ -41,6 +52,16 @@ class MainActivity : AppCompatActivity() {
                         getString(R.string.escogerCarrera) + " " +
                                 "" + carreras[position], Toast.LENGTH_SHORT
                     ).show()
+
+                    /*
+                    // Obtiene la imagen correspondiente a la carrera seleccionada
+                    val imagenCarrera = carreraImagenes[position]
+
+                    // Muestra la imagen en un ImageView
+                    val imageView = findViewById<ImageView>(R.id.imageView)
+                    imageView.setImageResource(imagenCarrera)
+                     */
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {

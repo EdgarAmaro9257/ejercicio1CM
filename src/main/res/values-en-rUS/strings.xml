@@ -37,4 +37,5 @@
     <string name="edad">Age</string>
     <string name="zodiac">Your zodiacs are:</string>
     <string name="edad2">Age:</string>
+    <string name="nombreCompleto">Name Complete:</string>
 </resources>

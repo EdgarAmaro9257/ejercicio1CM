@@ -4,6 +4,7 @@
     <string name="instrucciones">Por favor ingrese los siguientes datos:</string>
     <string name="nombre">Nombre</string>
     <string name="apellidos">Apellidos</string>
+    <string name="nombreCompleto">Nombre Completo:</string>
     <string name="fechaNaci">Fecha de Nacimiento</string>
     <string name="correoElec">Correo Electrónico</string>
     <string name="numCuenta">Número de cuenta</string>
