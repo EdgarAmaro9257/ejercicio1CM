@@ -10,7 +10,7 @@ import com.example.ejercicio1.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    //INICIANDO
+    //INICIANDO  EL PROYECTO
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
