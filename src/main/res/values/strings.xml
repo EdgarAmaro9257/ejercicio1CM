@@ -2,8 +2,7 @@
     <string name="app_name">Ejercicio1</string>
     <string name="titulo">Curiosidad Forms</string>
     <string name="instrucciones">Por favor ingrese los siguientes datos:</string>
-    <string name="nombre">Nombre</string>
-    <string name="apellidos">Apellidos</string>
+    <string name="nombre">Nombre Completo</string>
     <string name="nombreCompleto">Nombre Completo:</string>
     <string name="fechaNaci">Fecha de Nacimiento</string>
     <string name="correoElec">Correo Electrónico</string>
@@ -13,6 +12,7 @@
     <string name="nombreCreador">Edgar Amaro Cantoral</string>
     <string name="escogerCarrera">Carrera:</string>
     <string name="escogerCarrera2">Carrera</string>
+    <string name="escogerCarrera3">Carrera</string>
     <string name="nombre_error">Por favor, ingresa un nombre</string>
     <string name="fecha_error">Por favor, ingresa una fecha correcta</string>
     <string name="cuenta_error">Por favor, ingresa un número de cuenta correcto</string>
@@ -20,6 +20,8 @@
     <string name="edad">Edad</string>
     <string name="edad2">Edad:</string>
     <string name="zodiac">Tus zodiacos son:</string>
+    <string name="tuCorreo">Correo:</string>
+    <string name="tuNumeroCuenta">Número de cuenta:</string>
 
     <string-array name="Carreras">
         <item>Ingeniería Aeroespacial</item>

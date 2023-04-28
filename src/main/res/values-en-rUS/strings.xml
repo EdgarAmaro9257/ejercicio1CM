@@ -38,4 +38,7 @@
     <string name="zodiac">Your zodiacs are:</string>
     <string name="edad2">Age:</string>
     <string name="nombreCompleto">Name Complete:</string>
+    <string name="escogerCarrera3">Career</string>
+    <string name="tuCorreo">Email:</string>
+    <string name="tuNumeroCuenta">Account Number:</string>
 </resources>

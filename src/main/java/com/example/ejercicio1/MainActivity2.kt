@@ -2,6 +2,7 @@ package com.example.ejercicio1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import com.example.ejercicio1.databinding.ActivityMain2Binding
 import java.util.*
 
@@ -18,7 +19,6 @@ class MainActivity2 : AppCompatActivity() {
         val bundle = intent.extras
         // se guardan
         val name = bundle?.getString("name","")
-        val name2= bundle?.getString("name2","")
         val date = bundle?.getString("date","")
         val account = bundle?.getString("account","")
         val email = bundle?.getString("email","")
@@ -26,7 +26,6 @@ class MainActivity2 : AppCompatActivity() {
         with(binding){
 
             nombredelaPersona.text = name
-            apellidos.text = name2
             ageCalculator(date.toString())
             numerodeCuenta.text = account
             correoElectronico.text = email
@@ -34,6 +33,30 @@ class MainActivity2 : AppCompatActivity() {
             zodiac(date.toString())
 
         }
+
+
+
+        //Recibiendo imagenes de las carrera del spinner de la primera activity
+        /*
+        val carrera = intent.getStringExtra("carrera")
+        val imageView = findViewById<ImageView>(R.id.imagenCarreras)
+        when (carrera) {
+            "Ingeniería Aeroespacial" -> imageView.setImageResource(R.drawable.ingaero4)
+            "Ingeniería Ambiental" -> imageView.setImageResource(R.drawable.ingambien)
+            "Ingeniería en Civil" -> imageView.setImageResource(R.drawable.ingcivil)
+            "Ingeniería en Computación" -> imageView.setImageResource(R.drawable.ingcompu)
+            "Ingeniería Eléctrica Electrónica" -> imageView.setImageResource(R.drawable.ingelectro2)
+            "Ingeniería Geofísica" -> imageView.setImageResource(R.drawable.ingeofisica)
+            "Ingeniería Geológica" -> imageView.setImageResource(R.drawable.inggeologica)
+            "Ingeniería Geomática" -> imageView.setImageResource(R.drawable.inggeoma2)
+            "Ingeniería Mecánica" -> imageView.setImageResource(R.drawable.ingmecanica)
+            "Ingeniería Mecantrónica" -> imageView.setImageResource(R.drawable.ingmecatronica)
+            "Ingeniería de Minas y Metalurgia" -> imageView.setImageResource(R.drawable.ingminasmetal)
+            "Ingeniería Petrolera" -> imageView.setImageResource(R.drawable.ingpetro)
+            "Ingeniería en Sitemas Biomédicos" -> imageView.setImageResource(R.drawable.ingsisbio)
+            "Ingeniería en Telecomunicaciones" -> imageView.setImageResource(R.drawable.ingtelecom)
+        }
+        */
     }
 
     fun zodiacCh(date: String){

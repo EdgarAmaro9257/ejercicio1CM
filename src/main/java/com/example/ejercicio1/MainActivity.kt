@@ -24,16 +24,6 @@ class MainActivity : AppCompatActivity() {
         //Accediendo a spinner
         val spinner = findViewById<Spinner>(R.id.spinner)
 
-        /*
-        val carreraImagenes = listOf(
-            R.drawable.carrera_1_imagen,
-            R.drawable.carrera_2_imagen,
-            R.drawable.carrera_3_imagen,
-            // Agrega más imágenes para cada carrera
-        )
-
-         */
-
         if (spinner != null) {
             val adapter = ArrayAdapter(
                 this,
@@ -43,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
             spinner.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
+                //Para el spinner_imagen carreras
                 override fun onItemSelected(
                     parent: AdapterView<*>,
                     view: View, position: Int, id: Long
@@ -52,22 +43,13 @@ class MainActivity : AppCompatActivity() {
                         getString(R.string.escogerCarrera) + " " +
                                 "" + carreras[position], Toast.LENGTH_SHORT
                     ).show()
-
-                    /*
-                    // Obtiene la imagen correspondiente a la carrera seleccionada
-                    val imagenCarrera = carreraImagenes[position]
-
-                    // Muestra la imagen en un ImageView
-                    val imageView = findViewById<ImageView>(R.id.imageView)
-                    imageView.setImageResource(imagenCarrera)
-                     */
-
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // write code to perform some action
                 }
             }
+
         }
 
     }
@@ -97,11 +79,9 @@ class MainActivity : AppCompatActivity() {
             R.id.button -> {
                 if (isNotEmpty()) {
                     // se pasa a la otra activity
-
                     val parameters = Bundle()
 
                     parameters.putString("name", binding.nombredelaPersona.text.toString())
-                    parameters.putString("name2", binding.apellidos.text.toString())
                     parameters.putString("date", binding.fechaNaci.text.toString())
                     parameters.putString("email", binding.correoElectronico.text.toString())
                     parameters.putString("account", binding.numerodeCuenta.text.toString())
@@ -128,7 +108,6 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             val idsTexts = listOf(
                 nombredelaPersona.text,
-                apellidos.text,
                 fechaNaci.text,
                 correoElectronico.text,
                 numerodeCuenta.text
@@ -147,44 +126,18 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    /*
-    private fun isNotEmpty(): Boolean {
-        val check = mutableListOf<Boolean>() // Para comprobar que haya texto
-        with(binding) {
-            val idsTexts = listOf(
-                nombredelaPersona.text,
-                apellidos.text,
-                fechaNaci.text,
-                correoElectronico.text,
-                numerodeCuenta.text
-            )
-
-            for (id_text in idsTexts) {
-                if (id_text.isEmpty()) {
-                    idError(idsTexts.indexOf(id_text))
-                } else {
-                    check.add(true)
-                }
-            }
-            return check.size == 4
-        }
-    }
-*/
     private fun idError(id: Int) {
         when (id) {
             0 -> {
                 binding.nombredelaPersona.error = getString(R.string.nombre_error)
             }
             1 -> {
-                binding.apellidos.error = getString(R.string.nombre_error)
-            }
-            2 -> {
                 binding.fechaNaci.error = getString(R.string.fecha_error)
             }
-            3 -> {
+            2 -> {
                 binding.correoElectronico.error = getString(R.string.correo_error)
             }
-            4 -> {
+            3 -> {
                 binding.numerodeCuenta.error = getString(R.string.cuenta_error)
             }
         }
