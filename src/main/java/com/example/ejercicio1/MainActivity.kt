@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                         getString(R.string.escogerCarrera) + " " +
                                 "" + carreras[position], Toast.LENGTH_SHORT
                     ).show()
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -52,6 +53,37 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.button.setOnClickListener {
+            if (isNotEmpty()) {
+                // se pasa a la otra activity
+                val parameters = Bundle()
+
+                parameters.putString("name", binding.nombredelaPersona.text.toString())
+                parameters.putString("date", binding.fechaNaci.text.toString())
+                parameters.putString("email", binding.correoElectronico.text.toString())
+                parameters.putString("account", binding.numerodeCuenta.text.toString())
+
+                val intent = Intent(this, MainActivity2::class.java)
+                intent.putExtras(parameters)
+
+                // Obtener la carrera seleccionada en el spinner
+                val selectedCarrera = spinner.selectedItem.toString()
+                intent.putExtra("carrera", selectedCarrera)
+
+                startActivity(intent)
+
+            } else {
+                Toast.makeText(
+                    this@MainActivity, getString(R.string.instrucciones),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
+        // Agregar acción al botón de fecha
+        binding.fechaNaci.setOnClickListener {
+            datePicker()
+        }
     }
 
     private fun datePicker(){
@@ -69,38 +101,6 @@ class MainActivity : AppCompatActivity() {
             }, year, month, day
         )
         datePickerDialog.show()
-    }
-
-
-    //Acción del botón ACEPTAR y traslado hacia MainActivity2
-    fun onClick(view: View) {
-
-        when (view.id) {
-            R.id.button -> {
-                if (isNotEmpty()) {
-                    // se pasa a la otra activity
-                    val parameters = Bundle()
-
-                    parameters.putString("name", binding.nombredelaPersona.text.toString())
-                    parameters.putString("date", binding.fechaNaci.text.toString())
-                    parameters.putString("email", binding.correoElectronico.text.toString())
-                    parameters.putString("account", binding.numerodeCuenta.text.toString())
-
-                    val intent = Intent(this, MainActivity2::class.java)
-                    intent.putExtras(parameters)
-                    startActivity(intent)
-
-                } else {
-                    Toast.makeText(
-                        this@MainActivity, getString(R.string.instrucciones),
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-            R.id.fechaNaci -> {
-                datePicker()
-            }
-        }
     }
 
     private fun isNotEmpty(): Boolean {
@@ -142,5 +142,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
+
 
