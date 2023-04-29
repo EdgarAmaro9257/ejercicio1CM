@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         binding.fechaNaci.setOnClickListener {
             datePicker()
         }
+
     }
 
     private fun datePicker(){

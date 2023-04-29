@@ -23,6 +23,7 @@
     <string name="tuCorreo">Correo:</string>
     <string name="tuNumeroCuenta">Número de cuenta:</string>
 
+
     <string-array name="Carreras">
         <item>Ingeniería Aeroespacial</item>
         <item>Ingeniería Ambiental</item>
