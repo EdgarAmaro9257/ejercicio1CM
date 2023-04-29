@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //Acción del botón
         binding.button.setOnClickListener {
             if (isNotEmpty()) {
                 // se pasa a la otra activity
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Obtener la carrera seleccionada en el spinner
                 val selectedCarrera = spinner.selectedItem.toString()
-                intent.putExtra("carrera", selectedCarrera)
+                intent.putExtra("career", selectedCarrera)
 
                 startActivity(intent)
 
@@ -103,6 +104,12 @@ class MainActivity : AppCompatActivity() {
         datePickerDialog.show()
     }
 
+    //Validando correo
+    private fun isValidEmail(email: CharSequence): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+
     private fun isNotEmpty(): Boolean {
         val check = mutableListOf<Boolean>() // Para comprobar que haya texto
         with(binding) {
@@ -118,12 +125,18 @@ class MainActivity : AppCompatActivity() {
                     idError(idsTexts.indexOf(id_text))
                     check.add(false) // Agregar un valor falso si el campo de texto está vacío
                 } else {
-                    check.add(true)
+                    if (id_text == correoElectronico.text && !isValidEmail(id_text)) {
+                        correoElectronico.error = getString(R.string.correo_error)
+                        check.add(false) // Agregar un valor falso si el correo electrónico es inválido
+                    } else {
+                        check.add(true)
+                    }
                 }
             }
             return check.all { it } // Devolver verdadero si todos los elementos en check son verdaderos
         }
     }
+
 
 
     private fun idError(id: Int) {

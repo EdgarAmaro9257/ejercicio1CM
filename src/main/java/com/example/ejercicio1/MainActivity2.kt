@@ -10,8 +10,6 @@ import java.util.*
 class MainActivity2 : AppCompatActivity() {
 
     private lateinit var binding:ActivityMain2Binding
-    //private var carreraSeleccionada = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +30,11 @@ class MainActivity2 : AppCompatActivity() {
 
         val account = bundle?.getString("account","")
         val email = bundle?.getString("email","")
-        val carrera = bundle?.getString("carrera","")
+        val career = bundle?.getString("career","")
+
+        //val imageCareer = obtainImageCareer(career.toString())
+        //val carreraImageView = findViewById<ImageView>(R.id.imagenCarreras)
+
 
         with(binding){
 
@@ -42,38 +44,52 @@ class MainActivity2 : AppCompatActivity() {
             correoElectronico.text = email
             zodiacCh(date.toString())
             zodiac(date.toString())
-            //obtenerImagenCarrera(String())
+            obtainImageCareer(career.toString())
 
         }
-
-        /*
-        //Recibiendo imagenes de las carrera del spinner de la primera activity
-        val imageView = binding.imagenCarreras
-        imageView.setImageResource(obtenerImagenCarrera(carreraSeleccionada))
-        */
-
-        val imageView = findViewById<ImageView>(R.id.imagenCarreras)
-
-        when (carrera) {
-            "Ingeniería Aeroespacial" -> imageView.setImageResource(R.drawable.ingaero4)
-            "Ingeniería Ambiental" -> imageView.setImageResource(R.drawable.ingambien)
-            "Ingeniería en Civil" -> imageView.setImageResource(R.drawable.ingcivil)
-            "Ingeniería en Computación" -> imageView.setImageResource(R.drawable.ingcompu)
-            "Ingeniería Eléctrica Electrónica" -> imageView.setImageResource(R.drawable.ingelectro2)
-            "Ingeniería Geofísica" -> imageView.setImageResource(R.drawable.ingeofisica)
-            "Ingeniería Geológica" -> imageView.setImageResource(R.drawable.inggeologica)
-            "Ingeniería Geomática" -> imageView.setImageResource(R.drawable.inggeoma2)
-            "Ingeniería Mecánica" -> imageView.setImageResource(R.drawable.ingmecanica)
-            "Ingeniería Mecantrónica" -> imageView.setImageResource(R.drawable.ingmecatronica)
-            "Ingeniería de Minas y Metalurgia" -> imageView.setImageResource(R.drawable.ingminasmetal)
-            "Ingeniería Petrolera" -> imageView.setImageResource(R.drawable.ingpetro)
-            "Ingeniería en Sitemas Biomédicos" -> imageView.setImageResource(R.drawable.ingsisbio)
-            "Ingeniería en Telecomunicaciones" -> imageView.setImageResource(R.drawable.ingtelecom)
-        }
-
 
     }
 
+    private fun obtainImageCareer(career: String): Int {
+        return when (career) {
+            "Ingeniería Aeroespacial" -> R.drawable.ingaero4
+            "Ingeniería Ambiental" -> R.drawable.ingambien
+            "Ingeniería en Civil" -> R.drawable.ingcivil
+            "Ingeniería en Computación" -> R.drawable.ingcompu
+            "Ingeniería Eléctrica Electrónica" -> R.drawable.ingelectro2
+            "Ingeniería Geofísica" -> R.drawable.ingeofisica
+            "Ingeniería Geológica" -> R.drawable.inggeologica
+            "Ingeniería Geomática" -> R.drawable.inggeoma2
+            "Ingeniería Mecánica" -> R.drawable.ingmecanica
+            "Ingeniería Mecantrónica" -> R.drawable.ingmecatronica
+            "Ingeniería de Minas y Metalurgia" -> R.drawable.ingminasmetal
+            "Ingeniería Petrolera" -> R.drawable.ingpetro
+            "Ingeniería en Sistemas Biomédicos" -> R.drawable.ingsisbio
+            "Ingeniería en Telecomunicaciones" -> R.drawable.ingtelecom
+            else -> R.drawable.ingcivil// Imagen predeterminada en caso de no haber ninguna carrera seleccionada
+        }
+    }
+    /*
+       when (career) {
+           "Ingeniería Aeroespacial" -> imageView.setImageResource(R.drawable.ingaero4)
+           "Ingeniería Ambiental" -> imageView.setImageResource(R.drawable.ingambien)
+           "Ingeniería en Civil" -> imageView.setImageResource(R.drawable.ingcivil)
+           "Ingeniería en Computación" -> imageView.setImageResource(R.drawable.ingcompu)
+           "Ingeniería Eléctrica Electrónica" -> imageView.setImageResource(R.drawable.ingelectro2)
+           "Ingeniería Geofísica" -> imageView.setImageResource(R.drawable.ingeofisica)
+           "Ingeniería Geológica" -> imageView.setImageResource(R.drawable.inggeologica)
+           "Ingeniería Geomática" -> imageView.setImageResource(R.drawable.inggeoma2)
+           "Ingeniería Mecánica" -> imageView.setImageResource(R.drawable.ingmecanica)
+           "Ingeniería Mecantrónica" -> imageView.setImageResource(R.drawable.ingmecatronica)
+           "Ingeniería de Minas y Metalurgia" -> imageView.setImageResource(R.drawable.ingminasmetal)
+           "Ingeniería Petrolera" -> imageView.setImageResource(R.drawable.ingpetro)
+           "Ingeniería en Sitemas Biomédicos" -> imageView.setImageResource(R.drawable.ingsisbio)
+           "Ingeniería en Telecomunicaciones" -> imageView.setImageResource(R.drawable.ingtelecom)
+       }
+       */
+
+
+    //Obteniendo el zodiaco chino
     fun zodiacCh(date: String){
         if (date.isNotBlank()) {
             val tmp = splitDate(date)
@@ -146,7 +162,7 @@ class MainActivity2 : AppCompatActivity() {
         // DAY MONTH YEAR
     }
 
-
+    //Obteniendo edad
     @SuppressLint("SetTextI18n")
     fun ageCalculator(date: String){
         val tmp = splitDate(date)
@@ -178,7 +194,7 @@ class MainActivity2 : AppCompatActivity() {
 
 
 
-
+    //Obteniendo el zodiaco normal
     fun zodiac(date: String){
         val tmp = splitDate(date)
         if (tmp.size == 3) {

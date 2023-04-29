@@ -4,7 +4,6 @@
     <string name="titulo">Curiosity Forms</string>
     <string name="instrucciones">Please enter the following data:</string>
     <string name="nombre">Name</string>
-    <string name="apellidos">Last Name</string>
     <string name="fechaNaci">Birthdate</string>
     <string name="correoElec">Email Address</string>
     <string name="numCuenta">Account Number</string>
